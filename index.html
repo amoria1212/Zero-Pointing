@@ -108,11 +108,41 @@
         .btn {
             transition: all 0.2s ease;
             font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            border-radius: var(--radius-pill);
+            padding: 0.5rem 1.125rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            border: none;
         }
 
         .btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-primary {
+            background-color: var(--color-dusty-rose);
+            color: var(--color-charcoal);
+        }
+        .btn-primary:hover {
+            background-color: var(--color-iris);
+            color: #ffffff;
+        }
+        .btn-ghost {
+            background-color: var(--color-whisper-grey);
+            color: var(--color-charcoal);
+        }
+        .btn-ghost:hover {
+            background-color: var(--color-luminous-pearl);
+        }
+        .btn-danger {
+            background-color: #ffffff;
+            color: var(--color-dusty-rose);
+            border: 1px solid var(--color-dusty-rose);
+        }
+        .btn-danger:hover {
+            background-color: var(--color-blush-lavender);
         }
 
         .logo-container {
@@ -186,19 +216,19 @@
             </div>
             <p class="text-gray-600 mb-4">Choose how you'd like to share your responses:</p>
             <div class="space-y-3">
-                <button onclick="shareViaEmail()" class="share-option" style="background-color: #EFF6FF; color: #1D4ED8;">
+                <button onclick="shareViaEmail()" class="share-option">
                     <span class="icon">📧</span>
                     <div class="content"><div class="title">Email</div><div class="description">Send via your email client</div></div>
                 </button>
-                <button onclick="copyToClipboard()" class="share-option" style="background-color: #F0FDF4; color: #15803D;">
+                <button onclick="copyToClipboard()" class="share-option">
                     <span class="icon">📋</span>
                     <div class="content"><div class="title">Copy to Clipboard</div><div class="description">Copy text to paste anywhere</div></div>
                 </button>
-                <button onclick="shareViaWebAPI()" class="share-option" id="webShareButton" style="background-color: #FAF5FF; color: #7C3AED; display: none;">
+                <button onclick="shareViaWebAPI()" class="share-option" id="webShareButton" style="display: none;">
                     <span class="icon">📲</span>
                     <div class="content"><div class="title">Share</div><div class="description">Use device sharing options</div></div>
                 </button>
-                <button onclick="downloadFile()" class="share-option" style="background-color: #FFF7ED; color: #C2410C;">
+                <button onclick="downloadFile()" class="share-option">
                     <span class="icon">💾</span>
                     <div class="content"><div class="title">Download File</div><div class="description">Save as text file</div></div>
                 </button>
@@ -223,16 +253,16 @@
 
         <!-- Control Buttons -->
         <div class="no-print flex flex-wrap gap-3 mb-6 justify-center sm:justify-end">
-            <button onclick="openShareModal()" class="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg hover:bg-purple-200 transition-colors text-sm font-medium btn">
+            <button onclick="openShareModal()" class="btn btn-primary">
                 🔗 Share
             </button>
-            <button onclick="exportData()" class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium btn">
+            <button onclick="exportData()" class="btn btn-ghost">
                 📤 Export Responses
             </button>
-            <button onclick="clearData()" class="px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors text-sm font-medium btn">
+            <button onclick="clearData()" class="btn btn-danger">
                 🗑️ Clear All
             </button>
-            <button onclick="window.print()" class="px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium btn">
+            <button onclick="window.print()" class="btn btn-ghost">
                 🖨️ Print
             </button>
         </div>
